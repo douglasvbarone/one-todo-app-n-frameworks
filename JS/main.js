@@ -1,3 +1,5 @@
+import './style.css'
+
 let todos = [
   {
     id: 324234,
@@ -56,15 +58,20 @@ function renderTodos() {
 
     if (todo.completed) newLi.classList.add('completed')
 
-    newLi.innerHTML = `
-      <input 
-        type="checkbox" 
-        onchange="updateTodoStatus(event)"
-        ${todo.completed ? 'checked' : 'unchecked'}
-      />
-      <span>${todo.text}</span>
-      <button onclick="deleteTodo(event)">Delete</button>
-      `
+    const newCheckbox = document.createElement('input')
+    newCheckbox.type = 'checkbox'
+    newCheckbox.checked = todo.completed
+    newCheckbox.addEventListener('click', updateTodoStatus)
+    newLi.appendChild(newCheckbox)
+
+    const newSpan = document.createElement('span')
+    newSpan.innerText = todo.text
+    newLi.appendChild(newSpan)
+
+    const newDeleteButton = document.createElement('button')
+    newDeleteButton.innerText = 'Delete'
+    newDeleteButton.addEventListener('click', deleteTodo)
+    newLi.appendChild(newDeleteButton)
 
     todoList.appendChild(newLi)
   })
@@ -89,5 +96,7 @@ function updateTodoStatus(e) {
 
   renderTodos()
 }
+
+document.getElementsByTagName('form')[0].addEventListener('submit', onSubmit)
 
 renderTodos()
