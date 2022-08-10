@@ -1,0 +1,11 @@
+@import url(../shared/style.css);
+
+:root {
+  --fg-color-1: #5a4600;
+  --fg-color-2: #a78421;
+  --bg-color-1: #f6d013;
+  --bg-color-2: #a78421;
+  --accent-color: #0c0b0c;
+
+  --page-bg-color: rgb(255, 254, 250);
+}
