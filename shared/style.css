@@ -1,15 +1,22 @@
-:root {
-  --fg-color-1: #002f2f;
-  --fg-color-2: #046380;
-  --bg-color-1: #e6e2af;
-  --bg-color-2: #a7a37e;
-  --accent-color: #efecca;
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
-  --page-bg-color: #fcfbf3;
+:root {
+  --fg-color-1: hsl(var(--base-color-h), 10%, 10%);
+  --fg-color-2: hsl(var(--accent-color-h), 20%, 50%);
+  --bg-color-1: hsl(
+    var(--base-color-h),
+    var(--base-color-s),
+    var(--base-color-l)
+  );
+  --bg-color-2: hsl(var(--accent-color-h), 10%, 20%);
+
+  --accent-color: hsl(var(--accent-color-h), 100%, 20%);
+
+  --page-bg-color: hsl(var(--base-color-h), 10%, 95%);
 
   --box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%);
 
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Lato, Avenir, Helvetica, Arial, sans-serif;
   font-size: 24px;
   line-height: 1.5em;
 
@@ -115,13 +122,13 @@ li button {
 }
 
 li button:hover {
-  background-color: var(--bg-color-2);
-  color: var(--fg-color-2);
+  background-color: var(--fg-color-1);
+  color: var(--bg-color-1);
 }
 
 .completed span {
   text-decoration: line-through;
-  color: var(--bg-color-2);
+  color: var(--fg-color-2);
 }
 
 .empty {
@@ -132,8 +139,8 @@ footer {
   text-align: center;
   margin-top: 1rem;
   font-weight: bold;
-  color: var(--fg-color-1);
-  background-color: var(--bg-color-1);
+  color: var(--bg-color-1);
+  background-color: var(--fg-color-1);
   padding: 0.5rem;
   box-shadow: var(--box-shadow);
 }

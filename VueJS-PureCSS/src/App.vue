@@ -60,9 +60,9 @@ function deleteTodo(id) {
     </ul>
 
     <div class="empty" v-else>Add some todos!</div>
-    <div class="footer">
+    <footer>
       <span>VueJS</span>
-    </div>
+    </footer>
   </div>
 </template>
 

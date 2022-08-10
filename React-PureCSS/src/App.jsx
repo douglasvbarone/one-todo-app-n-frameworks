@@ -78,9 +78,9 @@ function App() {
           </li>
         ))}
       </ul>
-      <div className='footer'>
+      <footer>
         <span>React JS</span>
-      </div>
+      </footer>
     </div>
   )
 }
