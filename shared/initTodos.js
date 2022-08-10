@@ -2,7 +2,7 @@ export default [
   {
     id: 324234,
     text: 'Learn JS',
-    completed: false
+    completed: true
   },
   {
     id: 365734,
@@ -12,7 +12,7 @@ export default [
   {
     id: 658754,
     text: 'Learn Angular',
-    completed: true
+    completed: false
   },
   {
     id: 658744,
