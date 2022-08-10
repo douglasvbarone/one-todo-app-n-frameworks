@@ -1,4 +1,6 @@
-# One To-Do App, N Front-End frameworks (and vanilla JS)
+# One To-Do App, N Front-End frameworks
+
+(and vanilla JS)
 
 Because WHY NOT?!
 
