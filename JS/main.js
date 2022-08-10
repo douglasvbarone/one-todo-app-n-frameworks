@@ -1,22 +1,7 @@
 import './style.css'
+import initialTodos from '../shared/initTodos'
 
-let todos = [
-  {
-    id: 324234,
-    text: 'Uma tarefa',
-    completed: false
-  },
-  {
-    id: 365734,
-    text: 'Outra tarefa',
-    completed: false
-  },
-  {
-    id: 658754,
-    text: 'Uma tarefa feita',
-    completed: true
-  }
-]
+let todos = [...initialTodos]
 
 function onSubmit(e) {
   e.preventDefault()
@@ -42,11 +27,16 @@ function onSubmit(e) {
 
 function renderTodos() {
   const todoList = document.querySelector('ul')
+  const emptyDiv = document.querySelector('.empty')
 
   if (todos.length == 0) {
-    todoList.innerHTML = ':('
+    todoList.style.display = 'none'
+    emptyDiv.style.display = 'block'
     return
   }
+
+  todoList.style.display = 'block'
+  emptyDiv.style.display = 'none'
 
   todoList.innerHTML = ''
 

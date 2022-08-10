@@ -1,25 +1,8 @@
 <script setup>
 import { ref } from 'vue'
+import initialTodos from '../../shared/initTodos'
 
-const todosInit = [
-  {
-    id: 324234,
-    text: 'Uma tarefa',
-    completed: false
-  },
-  {
-    id: 365734,
-    text: 'Outra tarefa',
-    completed: false
-  },
-  {
-    id: 658754,
-    text: 'Uma tarefa feita',
-    completed: true
-  }
-]
-
-const todos = ref([...todosInit])
+const todos = ref([...initialTodos])
 const newTodo = ref('')
 
 function onSubmit() {
@@ -36,7 +19,7 @@ function deleteTodo(id) {
 
 <template>
   <div class="container">
-    <h1>Todos</h1>
+    <h1>Tasks</h1>
 
     <form @submit.prevent="onSubmit">
       <input placeholder="What's next?" v-model="newTodo" />
@@ -61,7 +44,7 @@ function deleteTodo(id) {
 
     <div class="empty" v-else>Add some todos!</div>
     <footer>
-      <span>VueJS</span>
+      <span>Vue</span>
     </footer>
   </div>
 </template>

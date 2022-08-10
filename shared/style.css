@@ -137,7 +137,13 @@ li button:hover {
 }
 
 .empty {
-  padding: 2rem;
+  color: var(--fg-color-1);
+  background-color: var(--bg-color-1);
+  margin: 1rem -2rem;
+  padding: 1rem;
+  border: 1px solid var(--accent-color);
+
+  text-align: center;
 }
 
 footer {

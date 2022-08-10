@@ -1,26 +1,9 @@
 import { useState } from 'react'
 import './App.css'
-
-const todosInit = [
-  {
-    id: 324234,
-    text: 'Uma tarefa',
-    completed: false
-  },
-  {
-    id: 365734,
-    text: 'Outra tarefa',
-    completed: false
-  },
-  {
-    id: 658754,
-    text: 'Uma tarefa feita',
-    completed: true
-  }
-]
+import initialTodos from '../../shared/initTodos'
 
 function App() {
-  const [todos, setTodos] = useState([...todosInit])
+  const [todos, setTodos] = useState([...initialTodos])
   const [newTodoText, setNewTodoText] = useState('')
 
   function handleAddTodo(e) {
@@ -39,7 +22,7 @@ function App() {
 
   return (
     <div className='container'>
-      <h1>Todos</h1>
+      <h1>Tasks</h1>
 
       <form onSubmit={handleAddTodo}>
         <input
@@ -51,35 +34,39 @@ function App() {
         <button type='submit'>+</button>
       </form>
 
-      <ul>
-        {todos.map(todo => (
-          <li
-            className={`todo ${todo.completed ? 'completed' : ''}`}
-            key={todo.id}
-          >
-            <input
-              type='checkbox'
-              checked={todo.completed}
-              onChange={() =>
-                setTodos(
-                  todos.map(t => {
-                    if (t.id === todo.id) t.completed = !t.completed
-                    return t
-                  })
-                )
-              }
-            />
-            <span>{todo.text}</span>
-            <button
-              onClick={() => setTodos(todos.filter(t => t.id != todo.id))}
+      {todos.length ? (
+        <ul>
+          {todos.map(todo => (
+            <li
+              className={`todo ${todo.completed ? 'completed' : ''}`}
+              key={todo.id}
             >
-              Delete
-            </button>
-          </li>
-        ))}
-      </ul>
+              <input
+                type='checkbox'
+                checked={todo.completed}
+                onChange={() =>
+                  setTodos(
+                    todos.map(t => {
+                      if (t.id === todo.id) t.completed = !t.completed
+                      return t
+                    })
+                  )
+                }
+              />
+              <span>{todo.text}</span>
+              <button
+                onClick={() => setTodos(todos.filter(t => t.id != todo.id))}
+              >
+                Delete
+              </button>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div class='empty'>Add some tasks!</div>
+      )}
       <footer>
-        <span>React JS</span>
+        <span>React</span>
       </footer>
     </div>
   )
