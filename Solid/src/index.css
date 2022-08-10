@@ -1,0 +1,9 @@
+@import url('../../shared/style.css');
+
+:root {
+  --base-color-h: 212;
+  --base-color-s: 51%;
+  --base-color-l: 55%;
+
+  --accent-color-h: 53;
+}

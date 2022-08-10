@@ -86,6 +86,7 @@ li {
   margin: 0;
   border-left: 1px solid var(--accent-color);
   border-right: 1px solid var(--accent-color);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   background-color: var(--bg-color-1);
   color: var(--fg-color-1);
   overflow: hidden;
